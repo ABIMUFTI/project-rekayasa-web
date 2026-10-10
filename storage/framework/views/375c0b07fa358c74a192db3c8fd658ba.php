@@ -12,6 +12,9 @@
                     <a class="nav-link" href="<?php echo e(url('/profile')); ?>">Profile</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo e(url('/project')); ?>">Project</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo e(url('/about')); ?>">About</a>
                 </li>
             </ul>
