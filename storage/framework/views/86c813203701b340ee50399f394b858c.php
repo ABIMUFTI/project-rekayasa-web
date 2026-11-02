@@ -1,5 +1,7 @@
 
 
+<?php $__env->startSection('title', 'About'); ?>
+
 <?php $__env->startSection('content'); ?>
     <div class="container">
         <div class="row justify-content-center">
