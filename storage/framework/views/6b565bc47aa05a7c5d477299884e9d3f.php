@@ -64,8 +64,22 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo e(route('home')); ?>">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo e(route('logout')); ?>">Logout</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php echo e(Auth::user()->name); ?>
+
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li class="dropdown-item-text text-muted">
+                            <email><?php echo e(Auth::user()->email); ?></email>
+                        </li>
+                        <li>
+                            <form method="POST" action="<?php echo e(route('admin.logout')); ?>">
+                                <?php echo csrf_field(); ?>
+                                <button type="submit" class="dropdown-item">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
