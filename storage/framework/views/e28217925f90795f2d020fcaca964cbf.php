@@ -8,7 +8,7 @@
 </head>
 <style>
     body{
-        background-image: url('<?php echo e(asset("bootstrap-5.3.8-dist/images/unpam-img.png")); ?>');
+        background-image: url('<?php echo e(asset("images/gedung-unpam.jpg")); ?>');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
