@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class AdminProjectController extends Controller
@@ -96,5 +97,13 @@ class AdminProjectController extends Controller
         $project->delete();
 
         return redirect()->route('projects.index')->with('success', 'Project deleted successfully.');
+    }
+
+    public function cetakPDF()
+    {
+        $projects = Project::all();
+        $pdf = PDF::loadView('admin.projects.pdf', compact('projects'));
+        
+        return $pdf->stream('projects.pdf');
     }
 }

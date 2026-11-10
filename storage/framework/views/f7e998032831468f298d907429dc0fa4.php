@@ -4,7 +4,10 @@
     <div class="container-fluid">
         <div class="d-flex justify-content-between mb-3 py-3">
             <h3>Data Projects</h3>
+            <header class="justify-content-end">
             <a href="<?php echo e(route('projects.create')); ?>" class="btn btn-primary">Tambah Project</a>
+            <a href="<?php echo e(route('projects.pdf')); ?>" class="btn btn-danger" target="_blank">Cetak PDF</a>
+            </header>
         </div>
     </div>
     <?php if(session('success')): ?>
@@ -28,7 +31,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
                         <td><?php echo e($loop->iteration); ?></td>
                         <td>
